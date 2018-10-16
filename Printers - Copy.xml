@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<printers xmlns="http://tempuri.org/PrintersSchema.xsd">
+  <printer>
+    <Make>Make1</Make>
+    <Model>Model1</Model>
+    <Href>http://about.com</Href>
+    <Yield>Yield1</Yield>
+    <InkCost>InkCost1</InkCost>
+    <ListPrice>100</ListPrice>
+    <OtherPrice>50</OtherPrice>
+    <!-- "W"" x D"" x H" -->
+    <Dimensions>
+      <Width>20</Width>
+      <Depth>20</Depth>
+      <Height>20</Height>
+    </Dimensions>
+    <TouchScreen>No</TouchScreen>
+    <Volume>1000</Volume>
+    <Notes>Whatever for one.</Notes>
+  </printer>
+  <printer>
+    <Make>Make2</Make>
+    <Model>Model2</Model>
+    <Href>http://about.com</Href>
+    <Yield>Yield2</Yield>
+    <InkCost>InkCost2</InkCost>
+    <ListPrice>100</ListPrice>
+    <OtherPrice>50</OtherPrice>
+    <!-- "W"" x D"" x H" -->
+    <Dimensions>
+      <Width>100</Width>
+      <Depth>100</Depth>
+      <Height>100</Height>
+    </Dimensions>
+    <TouchScreen>No</TouchScreen>
+    <Volume>1000</Volume>
+    <Notes>Whatever for 2.</Notes>
+  </printer>
+</printers>

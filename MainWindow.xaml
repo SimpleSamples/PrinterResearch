@@ -5,8 +5,42 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PrinterResearch"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+        Title="MainWindow" Height="500" Width="1000" Loaded="Window_Loaded">
+    <DockPanel>
+        <Menu Height="25" DockPanel.Dock="Top">
+            <MenuItem x:Name="MenuOpen" Header="Open" Click="MenuOpen_Click"/>
+            <MenuItem x:Name="MenuSave" Header="Save" Click="MenuSave_Click"/>
+            <MenuItem x:Name="MenuDebug" Header="Debug" Click="MenuDebug_Click"/>
+            <MenuItem x:Name="MenuItemExit" Header="Exit" Click="MenuItemExit_Click"/>
+        </Menu>
+        <StatusBar Height="25" Margin="2,2,0,0" Name="statusBar1" DockPanel.Dock="Bottom">
+            <StatusBarItem x:Name="StatusMessage">Status Bar</StatusBarItem>
+        </StatusBar>
+        <DataGrid x:Name="MainGrid" AutoGenerateColumns="False">
+            <DataGrid.Resources>
+                <DataTemplate x:Key="DimensionsTemplate">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBox x:Name="ColumnWidth" Text="{Binding Dimensions.Width}" Width="40"/>
+                        <TextBlock Margin="5,0"> x </TextBlock>
+                        <TextBox x:Name="ColumnDepth" Text="{Binding Dimensions.Depth}" Width="40"/>
+                        <TextBlock Margin="5,0"> x </TextBlock>
+                        <TextBox x:Name="ColumnHeight" Text="{Binding Dimensions.Height}" Width="40"/>
+                    </StackPanel>
+                </DataTemplate>
+            </DataGrid.Resources>
+            <DataGrid.Columns>
+                <DataGridTextColumn x:Name="ColumnMake" Binding="{Binding Make}"  ClipboardContentBinding="{x:Null}" Header="Make"/>
+                <DataGridTextColumn x:Name="ColumnModel" Binding="{Binding Model}" ClipboardContentBinding="{x:Null}" Header="Model"/>
+                <DataGridTextColumn x:Name="ColumnHref" Binding="{Binding Href}" ClipboardContentBinding="{x:Null}" Header="Href"/>
+                <DataGridTextColumn x:Name="ColumnYield" Binding="{Binding Yield}" ClipboardContentBinding="{x:Null}" Header="Yield"/>
+                <DataGridTextColumn x:Name="ColumnInkPrice" Binding="{Binding InkCost}" ClipboardContentBinding="{x:Null}" Header="Ink $"/>
+                <DataGridTextColumn x:Name="ColumnListPrice" Binding="{Binding ListPrice}" ClipboardContentBinding="{x:Null}" Header="List $"/>
+                <DataGridTextColumn x:Name="ColumnOtherPrice" Binding="{Binding OtherPrice}" ClipboardContentBinding="{x:Null}" Header="Other $"/>
+                <DataGridTemplateColumn x:Name="ColumnDimensions" Header="W x D x H" CellTemplate="{StaticResource DimensionsTemplate}"/>
+                <DataGridTextColumn x:Name="ColumnScreen" Binding="{Binding TouchScreen}" ClipboardContentBinding="{x:Null}" Header="T. Scr."/>
+                <DataGridTextColumn x:Name="ColumnVolume" Binding="{Binding Volume}" ClipboardContentBinding="{x:Null}" Header="Volume"/>
+                <DataGridTextColumn x:Name="ColumnNotes" Binding="{Binding Notes}" ClipboardContentBinding="{x:Null}" Header="Notes"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </DockPanel>
 </Window>

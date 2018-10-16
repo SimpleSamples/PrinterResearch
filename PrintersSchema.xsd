@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="PrintersSchema"
+    targetNamespace="http://tempuri.org/PrintersSchema.xsd"
+    elementFormDefault="qualified"
+    xmlns="http://tempuri.org/PrintersSchema.xsd"
+    xmlns:mstns="http://tempuri.org/PrintersSchema.xsd"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+>
+<!-- xsd /c /namespace:PrinterResearch /language:CS PrintersSchema.xsd -->
+    <xs:element name="printers">
+      <xs:complexType>
+        <xs:sequence>
+          <xs:element name="printer" maxOccurs="unbounded" minOccurs="0">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element type="xs:string" name="Make"/>
+                <xs:element type="xs:string" name="Model"/>
+                <xs:element type="xs:string" name="Href"/>
+                <xs:element type="xs:string" name="Yield"/>
+                <xs:element type="xs:string" name="InkCost"/>
+                <xs:element type="xs:byte" name="ListPrice"/>
+                <xs:element type="xs:byte" name="OtherPrice"/>
+                <xs:element name="Dimensions">
+                  <xs:annotation>
+                    <xs:documentation>"W"" x D"" x H"  "W"" x D"" x H"</xs:documentation>
+                  </xs:annotation>
+                  <xs:complexType>
+                    <xs:sequence>
+                      <xs:element type="xs:byte" name="Width"/>
+                      <xs:element type="xs:byte" name="Depth"/>
+                      <xs:element type="xs:byte" name="Height"/>
+                    </xs:sequence>
+                  </xs:complexType>
+                </xs:element>
+                <xs:element type="xs:string" name="TouchScreen"/>
+                <xs:element type="xs:short" name="Volume"/>
+                <xs:element type="xs:string" name="Notes"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
